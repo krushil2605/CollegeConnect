@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.socialIcons li {
+  list-style: none;
+}
+
+footer p {
+  text-align: center;
+}
+
+#com_nav ul {
+  background-color: rgba(81, 160, 197, 0.904);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#com_nav ul li {
+  list-style-type: none;
+}
+
+#com_nav a {
+  color: rgb(252, 252, 252);
+  text-decoration: none;
+}
+
+.headerdesign {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(195, 225, 232, 0.863),
+    white
+  );
+  /* margin: 1px; */
+}
+
+.headerdesign h1 {
+  font-family: "Open Sans", sans-serif, Arial;
+  margin: 1em;
+  color: rgb(33, 90, 116);
+  text-shadow: 5px 5px 5px rgb(133, 178, 194);
+}
+
+#headerlogo {
+  height: 4em;
+  width: 4em;
+  margin: 1em;
+  box-shadow: 3px 3px 7px rgb(0, 0, 0);
+  border-radius: 12px 12px 12px 12px;
+}
+
+/* message page */
+
+#sidebar {
+  border-right: 2px solid rgb(167, 167, 167);
+  box-shadow: 0px 0px 7px rgb(70, 69, 69);
+  border-radius: 8px;
+  background: linear-gradient(to left, white, rgba(113, 216, 216, 0.292));
+}
+
+#preview {
+  border-right: 1px solid rgb(245, 227, 227);
+  box-shadow: 2px 2px 7px rgb(231, 218, 218);
+  border-radius: 8px;
+  background: linear-gradient(to right, white, rgba(113, 216, 216, 0.292));
+}
+
+main {
+  display: grid;
+  column-gap: 15px;
+  grid-template-columns: 25% auto;
+  grid-template-rows: 375px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.people {
+  border-bottom: 1px solid rgb(180, 177, 177);
+  box-shadow: 3px bl;
+  border-radius: 5px;
+  margin: 10px;
+  padding-left: 5px;
+}
+
+.people img {
+  float: left;
+}
+
+.sub_message {
+  color: rgba(145, 145, 145, 0.808);
+}
+
+.group {
+  border-bottom: 1px solid rgb(180, 177, 177);
+  border-radius: 5px;
+  margin: 10px;
+  padding-left: 5px;
+}
+
+.group img {
+  float: left;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#hearder_of_people {
+  background-color: rgba(113, 216, 216, 0.477);
+  display: grid;
+  column-gap: 15px;
+  grid-template-columns: 15px auto;
+  border-radius: 7px;
+}
+
+#hearder_of_people img {
+  padding-top: 10px;
+}
+
+#hearder_of_people p {
+  padding-left: 5px;
+}
+
+/* #preview p {
+  width: 150px;
+  background-color: rgba(139, 140, 139, 0.377);
+  border: 1px solid rgb(180, 177, 177);
+  border-radius: 5px;
+} */
+
+.my_message {
+  padding-left: 10px;
+}
+.my_message p {
+  background-color: rgba(139, 140, 139, 0.377);
+  width: 150px;
+  border: 1px solid rgb(180, 177, 177);
+  border-radius: 5px;
+}
+
+.my_reply {
+  padding-left: 690px;
+}
+.my_reply p {
+  background-color: antiquewhite;
+  width: 200px;
+  border: 1px solid rgb(180, 177, 177);
+  border-radius: 5px 5px 5px;
+  display: flex;
+  justify-content: end;
+}
+
+#type_message {
+  background-color: aliceblue;
+  border: 1px solid rgb(180, 177, 177);
+  border-radius: 10px;
+  margin: 70px 10px 10px;
+  padding-left: 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  /* justify-content: baseline; */
+  /* align-items: baseline; */
+}
+
+#send_img {
+  padding-top: 10px;
+  padding-right: 10px;
+}
