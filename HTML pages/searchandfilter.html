@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../Images/favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/7ced19dc59.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Search &amp; Filter</title>
+    <link rel="stylesheet" href="/Stylesheets/footer.css" />
+    <link rel="stylesheet" href="/Stylesheets/searchfilter.css" />
+  </head>
+  <body>
+    <header>
+      <section class="headerdesign">
+        <img src="/Images/header-icon.png" id="headerlogo" class="logoImage" />
+        <h1 class="logoText">College Connect</h1>
+        <div class="loginText">
+          <a href="#" id="loginButton">Login</a>
+          <a href="#" id="signupButton">Sign Up</a>
+        </div>
+      </section>
+    </header>
+    <nav id="com_nav">
+      <ul>
+        <li><a href="/htmlPages/home.html">Home</a></li>
+        <li>
+          <a href="/htmlPages/searchandfilter.html">Search &amp; Filter</a>
+        </li>
+        <li><a href="/htmlPages/events.html">Events</a></li>
+        <li><a href="#">Resource</a></li>
+        <li><a href="#">Donation</a></li>
+      </ul>
+    </nav>
+    <main>
+      <form
+        id="userInput"
+        name="userInput"
+        action="#"
+        method="post"
+        onsubmit="return validateForm()"
+      >
+        <table class="table_css">
+          <tr>
+            <td>
+              <label for="firstName">First Name:</label>
+            </td>
+            <td>
+              <input type="text" id="firstName" name="firstName" />
+            </td>
+            <td>
+              <label for="lastName">Last Name:</label>
+            </td>
+            <td>
+              <input type="text" id="lastName" name="lastName" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="cityName">City:</label></td>
+            <td>
+              <input type="text" id="cityName" name="cityName" />
+            </td>
+            <td>
+              <p>Campus:</p>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="northCampus"
+                name="campus"
+                value="northCampus"
+              />
+              <label for="northCampus">North Campus</label>
+              <input
+                type="radio"
+                id="lakeshoreCampus"
+                name="campus"
+                value="lakeshoreCampus"
+              />
+              <label for="lakeshoreCampus">Lakeshore Campus</label>
+              <input type="radio" id="igs" name="campus" value="IGS" />
+              <label for="igs">IGS</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="courseName">Course Name:</label></td>
+            <td>
+              <select id="courseName" name="courseName">
+                <option value="" selected>Select</option>
+                <option value="itSolutions">IT Solutions</option>
+                <option value="webDevelopment">Web Development</option>
+                <option value="machineLearning">Machine Learning</option>
+              </select>
+            </td>
+            <td>
+              <label for="graduationYear">Graduation Year:</label>
+            </td>
+            <td>
+              <select id="graduationYear" name="graduationYear">
+                <option value="" selected>Select</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Select Country(ies):</p>
+            </td>
+            <td>
+              <input type="checkbox" id="Canada" name="Canada" value="Canada" />
+              <label for="Canada"> Canada</label>
+              <input type="checkbox" id="USA" name="USA" value="USA" />
+              <label for="USA"> USA</label>
+              <input type="checkbox" id="India" name="India" value="India" />
+              <label for="India"> India</label>
+              <input type="checkbox" id="UK" name="UK" value="UK" />
+              <label for="UK"> UK</label>
+              <input type="checkbox" id="Japan" name="Japan" value="Japan" />
+              <label for="Japan"> Japan</label>
+              <input type="checkbox" id="other" name="other" value="other" />
+              <label for="other"> Other</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="submit" name="Submit" id="submit" value="Search" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </main>
+    <footer>
+      <div class="socialIcons">
+        <ul class="socialIcons">
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
+          </li>
+        </ul>
+        <p>&copy; College Connect</p>
+      </div>
+    </footer>
+    <script src="/javascript/searchandfilter.js"></script>
+  </body>
+</html>
