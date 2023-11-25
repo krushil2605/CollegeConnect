@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.socialIcons li {
+  list-style: none;
+}
+
+footer p {
+  text-align: center;
+}
+
+#com_nav ul {
+  background-color: rgba(81, 160, 197, 0.904);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#com_nav ul li {
+  list-style-type: none;
+}
+
+#com_nav a {
+  color: rgb(252, 252, 252);
+  text-decoration: none;
+}
+
+#com_nav a:hover,
+#com_nav a:focus {
+  color: black;
+}
+
+/* #com_nav a:visited {
+  color: darkblue;
+} */
+
+.headerdesign {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(195, 225, 232, 0.863),
+    white
+  );
+  display: grid;
+  grid-template-areas:
+    "logoImage logoImage logoImage logoText"
+    "logoImage logoImage logoImage loginText";
+  /* margin: 1px; */
+}
+
+.logoImage {
+  height: 4em;
+  width: 4em;
+  margin: 1em;
+  flex: 0;
+  box-shadow: 3px 3px 7px rgb(0, 0, 0);
+  border-radius: 12px 12px 12px 12px;
+  grid-area: logoImage;
+}
+
+.logoText {
+  font-family: "Open Sans", sans-serif, Arial;
+  margin: 1em;
+  color: rgb(33, 90, 116);
+  text-shadow: 5px 5px 5px rgb(133, 178, 194);
+  grid-area: logoText;
+}
+
+.loginText {
+  grid-area: loginText;
+  display: flex;
+  justify-content: space-around;
+}
+
+#loginButton,
+#signupButton {
+  text-decoration: none;
+  font-weight: bold;
+  color: #3498db;
+}
+
+#loginButton:hover,
+#signupButton:hover,
+#loginButton:focus,
+#signupButton:focus {
+  color: black;
+}
+
+@media screen and (width <= 450px) {
+  .headerdesign {
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    grid-template-areas:
+      "logoImage logoImage"
+      "logoText logoText"
+      "loginText loginText";
+  }
+  .logoImage,
+  .logoText {
+    margin: 5px auto;
+    text-align: center;
+  }
+
+  .loginText {
+    margin: 5px;
+    text-align: center;
+  }
+
+  #com_nav ul {
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+  }
+
+  #com_nav ul li {
+    margin: 5px;
+    text-align: center;
+  }
+}

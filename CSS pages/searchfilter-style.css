@@ -1,0 +1,52 @@
+.userInput {
+  display: flex;
+  flex-wrap: wrap;
+}
+.inputTextbox {
+  flex: 0 0 50%;
+  box-sizing: border-box;
+}
+.campus {
+  display: flex;
+  justify-content: first baseline;
+  align-items: baseline;
+}
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.table_css {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table_css th,
+.table_css td {
+  padding: 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+@media screen and (max-width: 600px) {
+  .table_css {
+    display: block;
+  }
+
+  .table_css thead {
+    display: none;
+  }
+
+  .table_css tbody {
+    display: block;
+  }
+
+  .table_css tr {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
