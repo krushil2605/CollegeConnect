@@ -26,7 +26,7 @@
         <li><a href="">Events</a></li>
         <li><a href="">Blogs and Articles</a></li>
         <li><a href="./Resource.html">Resource</a></li>
-        <li><a href="./carrer-opp.html">Carrer</a></li>
+        <li><a href="./carrer-opp.html">Career</a></li>
         <li><a href="">Search and Filter</a></li>
         <li><a href="">Donation</a></li>
       </ul>
@@ -52,6 +52,7 @@
         </div>
       </div>
       <div>
+        <div id="post_here"></div>
         <div class="section2">
           <div>
             <div class="post_image">
@@ -73,7 +74,20 @@
           </p>
           <p>👍15 ❤️4 Krushil, Neel and others..</p>
           <!-- use java script here -->
-          <p class="post">add your comment...</p>
+
+          <div class="comment">
+            <input
+              type="text"
+              id="post_comment"
+              placeholder="add your comment.."
+            />
+            <img
+              src="../images/send.png"
+              height="30px"
+              onclick="addcomment()"
+            />
+          </div>
+          <div id="comment_here"></div>
           <!-- create form here -->
         </div>
         <div class="section2">
@@ -98,7 +112,15 @@
             width="500px"
           />
           <p>👍20 ❤️1 john, jensie and others..</p>
-          <p class="post">add your comment...</p>
+          <!-- here -->
+          <div class="comment">
+            <input type="text" placeholder="add your comment.." />
+            <img
+              src="../images/send.png"
+              height="30px"
+              onclick="addcomment()"
+            />
+          </div>
         </div>
         <div class="section2">
           <div>
@@ -119,7 +141,15 @@
           >
           </iframe>
           <p>👍9 👎4 Ananya, sid and others..</p>
-          <p class="post">add your comment...</p>
+          <!-- here -->
+          <div class="comment">
+            <input type="text" placeholder="add your comment.." />
+            <img
+              src="../images/send.png"
+              height="30px"
+              onclick="addcomment()"
+            />
+          </div>
         </div>
         <div class="section2">
           <div>
@@ -141,14 +171,37 @@
           </p>
 
           <p>👍28 🙏4 Darshil, shafiq and others..</p>
-          <p class="post">add your comment...</p>
+          <!-- here -->
+          <div class="comment">
+            <input type="text" placeholder="add your comment.." />
+            <img
+              src="../images/send.png"
+              height="30px"
+              onclick="addcomment()"
+            />
+          </div>
         </div>
       </div>
       <div>
         <div class="section3">
           <div>
             <!-- use js & form here  -->
-            <p class="post">start post</p>
+            <form name="post" action="" method="get" class="post">
+              <h3>Write your post here!</h3>
+              <input
+                type="text"
+                id="post_text"
+                placeholder="Write your LinkedIn post here..."
+              />
+            </form>
+            <form name="post" action="" method="get" class="post_button">
+              <input
+                type="button"
+                id="post_button"
+                value="Add Task"
+                onclick="addTask()"
+              />
+            </form>
             <ul id="post_section">
               <li>📰 Media</li>
               <li>🗓️ Event</li>
@@ -174,5 +227,6 @@
         <p>© College Connect</p>
       </div>
     </footer>
+    <script src="../javascript/resource.js"></script>
   </body>
 </html>

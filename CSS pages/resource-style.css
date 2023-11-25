@@ -78,12 +78,54 @@ main {
   list-style-type: none;
 }
 
-.post {
-  margin-left: 5px;
-  margin-right: 5px;
+#post_text {
+  margin-top: 20px;
+  margin-left: 30px;
   border: 1px solid rgb(86, 85, 85);
   border-radius: 5px 5px;
   padding: 5px;
+}
+
+#comment_here {
+  margin-top: 20px;
+  padding: 10px;
+  /* border: 1px solid rgb(86, 85, 85);
+  border-radius: 5px 5px; */
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgb(86, 85, 85);
+  border-radius: 5px 5px;
+}
+
+.comment input {
+  background-color: rgba(254, 254, 254, 0);
+  border: 1px solid rgba(255, 255, 255, 0);
+  /* padding-left: 1000px; */
+  width: 1990px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.post input {
+  border: 1px solid rgb(86, 85, 85);
+  border-radius: 5px 5px;
+  width: 280px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  height: 50px;
+}
+
+.post_button {
+  padding-top: 20px;
+  padding-left: 27px;
+  height: 50px;
 }
 
 @media screen and (max-width: 992px) {

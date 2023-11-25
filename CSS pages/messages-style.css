@@ -99,20 +99,20 @@ body {
   justify-content: end;
 }
 
-#type_message {
-  background-color: aliceblue;
-  border: 1px solid rgb(180, 177, 177);
-  border-radius: 10px;
-  margin: 70px 10px 10px;
-  padding-left: 12px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  /* justify-content: baseline; */
-  /* align-items: baseline; */
-}
-
 #send_img {
   padding-top: 10px;
   padding-right: 10px;
+}
+
+#type_message input {
+  background-color: aliceblue;
+  border: 1px solid rgb(180, 177, 177);
+  border-radius: 10px;
+  /* margin: 70px 10px 10px;
+  padding-top: 30px; */
+  display: flex;
+  /* justify-content: space-between;
+  flex-direction: row; */
+  /* justify-content: baseline; */
+  /* align-items: baseline; */
 }
