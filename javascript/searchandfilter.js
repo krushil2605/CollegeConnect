@@ -13,5 +13,22 @@ function validateForm() {
         alert('Please select a campus');
     }
 
-    return formValid;
+    var email = document.getElementById("email");
+    if(email.value!=""){
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+        if(!mailformat.test(email.value))
+        {          
+            alert("You have entered an invalid email address!");
+        } 
+    }
+     
+    var cityName = document.getElementById("cityName");
+    if(cityName.value!=""){
+        var mailformat = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;  
+        if(!mailformat.test(cityName.value))
+        {          
+            alert("You have entered an invalid city name!");
+        } 
+    }
+    return false;
 }
