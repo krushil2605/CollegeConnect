@@ -39,41 +39,37 @@
       </ul>
     </nav>
     <main>
-      <form
-        id="userInput"
-        name="userInput"
-        action="#"
-        method="post"
-        onsubmit="return validateForm()"
-      >
-        <table class="table_css">
-          <tr>
-            <td>
+      <section>
+        <form
+          id="userInput"
+          name="userInput"
+          action="#"
+          method="post"
+          onsubmit="return validateForm()"
+        >
+          <div class="userFilters">
+            <div class="filter">
               <label for="firstName">First Name:</label>
-            </td>
-            <td>
               <input type="text" id="firstName" name="firstName" />
-            </td>
-            <td>
+            </div>
+
+            <div class="filter">
               <label for="lastName">Last Name:</label>
-            </td>
-            <td>
               <input type="text" id="lastName" name="lastName" />
-            </td>
-          </tr>
-          <tr>
-            <td><label for="cityName">City:</label></td>
-            <td>
+            </div>
+
+            <div class="filter">
+              <label for="cityName">City:</label>
               <input type="text" id="cityName" name="cityName" />
-            </td>
-            <td><label for="email">Email:</label></td>
-            <td>
+            </div>
+
+            <div class="filter">
+              <label for="email">Email:</label>
               <input type="text" id="email" name="email" />
-            </td>
-            <td>
-              <p>Campus:</p>
-            </td>
-            <td>
+            </div>
+
+            <div class="filter">
+              Campus:
               <input
                 type="radio"
                 id="northCampus"
@@ -90,35 +86,30 @@
               <label for="lakeshoreCampus">Lakeshore Campus</label>
               <input type="radio" id="igs" name="campus" value="IGS" />
               <label for="igs">IGS</label>
-            </td>
-          </tr>
-          <tr>
-            <td><label for="courseName">Course Name:</label></td>
-            <td>
+            </div>
+
+            <div class="filter">
+              <label for="courseName">Course Name:</label>
               <select id="courseName" name="courseName">
                 <option value="" selected>Select</option>
                 <option value="itSolutions">IT Solutions</option>
                 <option value="webDevelopment">Web Development</option>
                 <option value="machineLearning">Machine Learning</option>
               </select>
-            </td>
-            <td>
+            </div>
+
+            <div class="filter">
               <label for="graduationYear">Graduation Year:</label>
-            </td>
-            <td>
               <select id="graduationYear" name="graduationYear">
                 <option value="" selected>Select</option>
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
               </select>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Select Country(ies):</p>
-            </td>
-            <td>
+            </div>
+
+            <div class="filter">
+              Select Country(ies):
               <input type="checkbox" id="Canada" name="Canada" value="Canada" />
               <label for="Canada"> Canada</label>
               <input type="checkbox" id="USA" name="USA" value="USA" />
@@ -127,19 +118,15 @@
               <label for="India"> India</label>
               <input type="checkbox" id="UK" name="UK" value="UK" />
               <label for="UK"> UK</label>
-              <input type="checkbox" id="Japan" name="Japan" value="Japan" />
-              <label for="Japan"> Japan</label>
               <input type="checkbox" id="other" name="other" value="other" />
               <label for="other"> Other</label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="submit" name="Submit" id="submit" value="Search" />
-            </td>
-          </tr>
-        </table>
-      </form>
+            </div>
+          </div>
+          <div>
+            <input type="submit" name="Submit" id="submit" value="Search" />
+          </div>
+        </form>
+      </section>
     </main>
     <footer>
       <div class="socialIcons">

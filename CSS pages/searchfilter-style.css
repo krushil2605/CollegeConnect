@@ -1,52 +1,41 @@
-.userInput {
-  display: flex;
-  flex-wrap: wrap;
-}
-.inputTextbox {
-  flex: 0 0 50%;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-.campus {
+
+main {
+  padding: 20px;
+}
+
+.userFilters {
   display: flex;
-  justify-content: first baseline;
-  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.submitButton {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-}
-.table_css {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 1rem;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-.table_css th,
-.table_css td {
-  padding: 0.5rem;
-  text-align: left;
-  vertical-align: top;
-}
-@media screen and (max-width: 600px) {
-  .table_css {
-    display: block;
-  }
 
-  .table_css thead {
-    display: none;
-  }
+.filter {
+  width: calc(33.33% - 10px);
+}
 
-  .table_css tbody {
-    display: block;
+@media screen and (max-width: 768px) {
+  .filter {
+    width: 100%;
   }
+}
 
-  .table_css tr {
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
+#submit {
+  width: 20%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#submit:hover {
+  background-color: #45a049;
 }
