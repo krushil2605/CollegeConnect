@@ -10,7 +10,14 @@ function validateForm() {
     }
 
     if (!formValid) {
-        alert('Please select a campus');
+        var errorMessageDiv = document.getElementById('campus-error-message');
+        errorMessageDiv.style.display = 'block'; 
+        errorMessageDiv.innerHTML = 'Please select a campus';
+        return false;
+    }else{
+        var errorMessageDiv = document.getElementById('campus-error-message');
+        errorMessageDiv.style.display = 'none';
+        errorMessageDiv.innerHTML = '';
     }
 
     var email = document.getElementById("email");
