@@ -99,6 +99,50 @@
   padding: 5px;
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-gap: 40px;
+  margin: 25px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.flip-box {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-box-front {
+  box-shadow: 2px 2px 7px rgb(117, 112, 112);
+  position: absolute;
+  backface-visibility: hidden;
+}
+.flip-box-back {
+  box-shadow: 2px 2px 7px rgb(117, 112, 112);
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  padding: 10px;
+}
+
+#applybutton {
+  background-color: aliceblue;
+}
+
+#clearbutton {
+  background-color: aliceblue;
+}
+
 @media screen and (max-width: 992px) {
   #content {
     display: flex;
