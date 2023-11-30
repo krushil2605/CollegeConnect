@@ -16,15 +16,20 @@ const taskLists = [];
           result += `<p> ${taskLists[i]} </p>`;
         }
         result += `
-      <p>👍1 you</p>
+      <p>👍1 </p>
       <div class="comment">
-            <input type="text" placeholder="add your comment.." />
+            <input
+              type="text"
+              id="post_comment_10"
+              placeholder="add your comment.."
+            />
             <img
               src="../images/send.png"
               height="30px"
-              onclick="addcomment()"
+              onclick="addcomment(10)"
             />
           </div>
+          <div id="comment_here_10"></div>
     </div>`;
         console.log(result);
         document.getElementById("post_here").innerHTML = result;
@@ -35,24 +40,43 @@ const taskLists = [];
         listTask();
       }
 
-      
 
-const commentLists = [];
-function commentListsTask() {
-    let result = `
-    <div class="post_image">
-    <img src="../images/man.png"/>
-    <p>Krushil Mehta</p>
-    </div>`;
-        for (i = 0; i < commentLists.length; i++) {
-          result += `<p> ${commentLists[i]} </p>`;
-        }
-        result += ``;
-        console.log(result);
-        document.getElementById("comment_here").innerHTML = result;
-      }
-      function addcomment() {
-        let newtask = document.getElementById("post_comment").value;
-        commentLists.push(newtask);
-        commentListsTask();
-      }
+
+const commentLists = {};
+
+function commentListsTask(sectionId) {
+    let result = `<br>
+        <div class="post_image">
+            <img src="../images/man.png"/>
+            <p>Krushil Mehta</p>
+        </div>`;
+
+    const currentCommentList = commentLists[sectionId] || [];
+
+    for (let i = 0; i < currentCommentList.length; i++) {
+        result += `<p> ${currentCommentList[i]} </p>`;
+    }
+
+    result += ``;
+    console.log(result);
+    document.getElementById(`comment_here_${sectionId}`).innerHTML = result;
+}
+
+function addcomment(sectionId) {
+    const newTask = document.getElementById(`post_comment_${sectionId}`).value;
+    
+    if (!commentLists[sectionId]) {
+        commentLists[sectionId] = [];
+    }
+    
+
+    if (newTask.trim() !== "") {
+      commentLists[sectionId].push(newTask);
+      commentListsTask(sectionId);
+  } else {
+      const commentInput = document.getElementById(`post_comment_${sectionId}`);
+      commentInput.style.border = "2px solid red"; // Adding red border for emphasis
+  }
+  
+    
+}
