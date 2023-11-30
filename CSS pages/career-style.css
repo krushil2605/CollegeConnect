@@ -50,12 +50,24 @@
   padding: 10px;
 }
 
+.dark-black-text {
+  color: red;
+}
+
+.section3 section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+
+  /* padding: 10px; */
+}
+
 .section3 {
   height: fit-content;
   margin: 20px;
-  border: 2px solid rgb(126, 123, 123);
-  box-shadow: 3px 3px 15px rgb(117, 112, 112);
-  border-radius: 15px 15px;
+  border: 1px solid rgb(126, 123, 123);
+  box-shadow: 1px 1px 7px rgb(117, 112, 112);
+  border-radius: 12px 12px;
   background-color: white;
   padding: 10px;
 }
@@ -124,15 +136,22 @@
 
 .flip-box-front {
   box-shadow: 2px 2px 7px rgb(117, 112, 112);
+  border-radius: 12px 12px;
   position: absolute;
   backface-visibility: hidden;
 }
+
 .flip-box-back {
   box-shadow: 2px 2px 7px rgb(117, 112, 112);
+  border-radius: 12px 12px;
   position: absolute;
   backface-visibility: hidden;
   transform: rotateY(180deg);
   padding: 10px;
+}
+
+.flip-box-front img {
+  border-radius: 12px 12px;
 }
 
 #applybutton {
