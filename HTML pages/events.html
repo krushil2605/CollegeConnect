@@ -27,21 +27,25 @@
       </header>
       <nav id="com_nav">
         <ul>
-            <li><a href="/HTML pages/home.html">Home</a></li>
-            <li><a href="/HTML pages/profile.html">Profiles</a></li>
-            <li><a href="/HTML pages/messages.html">Chat</a></li>
-            <li><a href="/HTML pages/events.html">Events</a></li>
-            <li><a href="/HTML pages/Blogs.html">Blogs and Articles</a></li>
-            <li><a href="/HTML pages/Resource.html">Resource</a></li>
-            <li><a href="/HTML pages/carrer-opp.html">Carrer</a></li>
-            <li><a href="/HTML pages/searchandfilter.html">Search and Filter</a></li>
-            <li><a href="/HTML pages/donation.html">Donation</a></li>
-          </ul>
-    </nav>
+          <li><a href="/HTML pages/home.html">Home</a></li>
+          <li><a href="/HTML pages/profile.html">Profiles</a></li>
+          <li><a href="/HTML pages/messages.html">Chat</a></li>
+          <li><a href="/HTML pages/events.html">Events</a></li>
+          <li><a href="/HTML pages/Blogs.html">Blogs and Articles</a></li>
+          <li><a href="/HTML pages/Resource.html">Resource</a></li>
+          <li><a href="/HTML pages/carrer-opp.html">Carrer</a></li>
+          <li>
+            <a href="/HTML pages/searchandfilter.html">Search and Filter</a>
+          </li>
+          <li><a href="/HTML pages/donation.html">Donation</a></li>
+        </ul>
+      </nav>
       <main>
         <section class="events">
           <section class="eventinfo">
-            <h3 class="eventinfoheading">Academic Events</h3>
+            <h3 class="eventinfoheading" onclick="openPopup()">
+              Academic Events
+            </h3>
             <p class="eventdata">
               Qualified academics, professionals, and specialists are frequently
               invited by universities to give lectures or take part in speaker
@@ -89,7 +93,7 @@
           <section class="eventinfo">
             <h3 class="eventinfoheading">Sports Events</h3>
             <p class="eventdata">
-              rivalries between many collegiate sports teams. Student-led
+              Rivalries between many collegiate sports teams. Student-led
               leagues and competitions in recreational sports. activities,
               lectures, and workshops promoting wellness and health.
             </p>
@@ -176,6 +180,16 @@
             </div>
           </section>
         </section>
+        <div id="popupContainer" class="popup-container">
+          <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2 id="popupHeading">Popup Content</h2>
+            <img id="popupImage" src="" alt="Event Image" class="popup-image" />
+            <p id="popupText">
+              This is the information you want to display in the popup.
+            </p>
+          </div>
+        </div>
       </main>
       <footer>
         <div class="socialIcons">

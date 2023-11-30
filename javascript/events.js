@@ -40,8 +40,8 @@ document.addEventListener("visibilitychange", () => {
 });
 
 function toggleLikeDislike(iconId) {
-  var likeIcon = document.getElementById(iconId);
-  var dislikeIcon = document.getElementById(
+  let likeIcon = document.getElementById(iconId);
+  let dislikeIcon = document.getElementById(
     iconId.replace("thumsup", "thumbsdown")
   );
 
@@ -53,3 +53,68 @@ function toggleLikeDislike(iconId) {
     dislikeIcon.style.display = "none";
   }
 }
+
+function openPopup(headingText, eventData) {
+  let popupContainer = document.getElementById("popupContainer");
+  let popupHeading = document.getElementById("popupHeading");
+  let popupText = document.getElementById("popupText");
+
+  let imageUrl = "/images/";
+
+  switch (headingText) {
+    case "Academic Events":
+      imageUrl += "Academic Events";
+      break;
+    case "Cultural and Arts Events":
+      imageUrl += "Cultural and Arts Events";
+      break;
+    case "Sports Events":
+      imageUrl += "Sports Events";
+      break;
+    case "Social and Networking Events":
+      imageUrl += "Social and Networking Events";
+      break;
+    case "Educational Workshops and Training":
+      imageUrl += "Educational Workshops and Training";
+      break;
+    case "Celebrations":
+      imageUrl += "Celebrations";
+      break;
+    default:
+      imageUrl = "";
+      break;
+  }
+
+  if (imageUrl != "") {
+    imageUrl += ".jpg";
+    let popupImage = document.getElementById("popupImage");
+    popupImage.src = imageUrl;
+  }
+
+  popupHeading.textContent = headingText;
+  popupText.textContent = eventData;
+
+  popupContainer.style.display = "block";
+  document.body.style.overflow = "hidden";
+}
+
+function closePopup() {
+  let popupContainer = document.getElementById("popupContainer");
+  popupContainer.style.display = "none";
+  let popupImage = document.getElementById("popupImage");
+  popupImage.src = "";
+  document.body.style.overflow = "auto";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  let headings = document.querySelectorAll(".eventinfoheading");
+  headings.forEach(function (heading) {
+    heading.addEventListener("click", function () {
+      let eventData = heading.nextElementSibling.textContent;
+      openPopup(heading.innerText, eventData);
+    });
+  });
+
+  let closeButton = document.getElementById("closePopup");
+  closeButton.addEventListener("click", closePopup);
+});
