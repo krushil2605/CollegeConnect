@@ -28,6 +28,11 @@ body {
   margin-top: 0;
   font-size: 2 em;
   color: #f8170be3;
+  cursor: pointer;
+}
+
+.eventinfoheading:hover {
+  color: black;
 }
 
 .eventdata {
@@ -43,4 +48,61 @@ body {
   display: flex;
   justify-content: space-between;
   padding-top: 9px;
+}
+
+.fa-regular {
+  cursor: pointer;
+}
+
+#popupContainer {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.popup-content {
+  padding: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+}
+
+.popup-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#popupHeading {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+#popupText {
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: #555;
+}
+
+#popupContainer {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
