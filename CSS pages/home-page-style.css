@@ -78,17 +78,17 @@
 
 /* Apply background image and ensure it covers the container */
 .profile-photo:nth-child(1) {
-  background-image: url("/images/profile1.jpg");
+  background-image: url("/images/profile-1.jpg");
   background-size: cover;
 }
 
 .profile-photo:nth-child(2) {
-  background-image: url("/images/profile2.jpg");
+  background-image: url("/images/profile-2.jpg");
   background-size: cover;
 }
 
 .profile-photo:nth-child(3) {
-  background-image: url("/images/profile3.jpg");
+  background-image: url("/images/profile-2.jpg");
   background-size: cover;
 }
 
@@ -104,11 +104,11 @@
 }
 
 /* Add this in your CSS file (home-page-style.css or a new file) */
-
 .quote-section {
   background-color: #f8f8f8;
   padding: 50px 0;
   text-align: center;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
 }
 
 .quote-container {
@@ -119,12 +119,19 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.quote-container:hover {
+  background-color: #e5e5e5; /* Change background color on hover */
+  transform: scale(1.05);
 }
 
 .quote-text {
   font-size: 1.5rem;
   font-style: italic;
   color: #333;
+  transition: color 0.3s ease; /* Add a smooth transition effect */
 }
 
 .quote-author {
