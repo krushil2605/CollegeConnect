@@ -36,3 +36,69 @@
   font-size: 1.5em; /* Increase font size */
   margin-bottom: 20px;
 }
+
+/* Add this in your home-page-style.css or modify existing styles */
+.testimonial-section {
+  background-color: #f9f9f9; /* Adjust background color as needed */
+  padding: 40px 0;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  text-align: center;
+  overflow: hidden; /* Hide overflow to prevent layout shifts on hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add a smooth transition effect */
+  border: 1px solid #ddd; /* Border color */
+  border-radius: 8px; /* Border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+  padding: 20px; /* Add padding for spacing */
+  margin: 10px; /* Add margin for spacing between testimonials */
+}
+
+.testimonial:hover {
+  transform: scale(1.1); /* Increase size on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+.profile-photo {
+  width: 80px;
+  height: 80px;
+  background-color: #3498db; /* Fallback color or loading state */
+  background-image: none; /* Remove the initial background image */
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Apply background image and ensure it covers the container */
+.profile-photo:nth-child(1) {
+  background-image: url("/images/profile1.jpg");
+  background-size: cover;
+}
+
+.profile-photo:nth-child(2) {
+  background-image: url("/images/profile2.jpg");
+  background-size: cover;
+}
+
+.profile-photo:nth-child(3) {
+  background-image: url("/images/profile3.jpg");
+  background-size: cover;
+}
+
+/* Additional styling for testimonial content */
+.testimonial-text {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.testimonial-author {
+  font-style: italic;
+  color: #555;
+}
