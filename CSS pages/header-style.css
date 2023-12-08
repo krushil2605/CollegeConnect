@@ -44,7 +44,7 @@ header {
 }
 
 .logoText:hover {
-  text-decoration: underline; /* Underline the text on hover */
+  text-decoration: none; /* Underline the text on hover */
 }
 
 /* Style the navigation menu */
