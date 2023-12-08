@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const heroSection = document.getElementById("heroSection");
   const welcomeText = document.getElementById("welcomeText");
-
+  getRandomQuote();
   // Array of image URLs for the hero background
   const imageUrls = [
     "/images/hero-image1.jpg",
@@ -60,3 +60,24 @@ document.addEventListener("visibilitychange", () => {
     if (notification) notification.close();
   }
 });
+
+function getRandomQuote() {
+  const apiUrl = "https://api.quotable.io/random";
+
+  fetch(apiUrl, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const quoteTextElement = document.getElementById("quoteText");
+      const quoteAuthorElement = document.getElementById("quoteAuthor");
+
+      quoteTextElement.textContent = `"${data.content}"`;
+      quoteAuthorElement.textContent = `- ${data.author}`;
+    })
+    .catch((error) => {
+      console.error("Error fetching quote:", error);
+    });
+}

@@ -102,3 +102,32 @@
   font-style: italic;
   color: #555;
 }
+
+/* Add this in your CSS file (home-page-style.css or a new file) */
+
+.quote-section {
+  background-color: #f8f8f8;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.quote-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #333;
+}
+
+.quote-author {
+  margin-top: 10px;
+  font-weight: bold;
+}
