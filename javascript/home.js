@@ -41,6 +41,32 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.log("permission already granted!");
   }
+
+  const feedbackSlider = document.getElementById("feedbackSlider");
+  const sliderValue = document.getElementById("sliderValue");
+  const rateButton = document.getElementById("rateButton");
+  const ratingResult = document.getElementById("ratingResult");
+
+  // Update the slider value display
+  feedbackSlider.addEventListener("input", function () {
+    sliderValue.textContent = feedbackSlider.value;
+  });
+
+  // Handle the rate button click
+  rateButton.addEventListener("click", function () {
+    const rating = feedbackSlider.value;
+    ratingResult.textContent = `Thank you for rating us : ${rating}`;
+  });
+
+  // Set cursor to pointer when hovering over the slider
+  feedbackSlider.addEventListener("mouseover", function () {
+    feedbackSlider.style.cursor = "pointer";
+  });
+
+  // Reset cursor when mouse leaves the slider
+  feedbackSlider.addEventListener("mouseout", function () {
+    feedbackSlider.style.cursor = "auto";
+  });
 });
 
 let notification, interval;
