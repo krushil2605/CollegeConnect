@@ -67,6 +67,41 @@ document.addEventListener("DOMContentLoaded", function () {
   feedbackSlider.addEventListener("mouseout", function () {
     feedbackSlider.style.cursor = "auto";
   });
+
+  document
+    .querySelectorAll('.col-connect-link[href^="#"]')
+    .forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+
+  // Scroll animation for elements
+  const sections = document.querySelectorAll(".col-connect-section");
+
+  function checkScroll() {
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const sectionBottom = section.getBoundingClientRect().bottom;
+
+      if (sectionTop < window.innerHeight && sectionBottom >= 0) {
+        section.classList.add("in-view");
+      } else {
+        section.classList.remove("in-view");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", checkScroll);
+  checkScroll();
 });
 
 let notification, interval;
