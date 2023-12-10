@@ -54,6 +54,7 @@ function searchAndFilter() {
   const course = document.getElementById("courseName").value;
   const graduationYear = document.getElementById("graduationYear").value;
   const countries = getSelectedCountries();
+  const dob = document.getElementById("dob").value;
 
   const userRecords = getStoredUserRecords();
   const searchResults = userRecords.filter((record) => {
@@ -65,7 +66,8 @@ function searchAndFilter() {
       (campus === "" || record.campus === campus) &&
       (course === "" || record.course === course) &&
       (graduationYear === "" || record.graduationYear === graduationYear) &&
-      (countries.length === 0 || countries.includes(record.country))
+      (countries.length === 0 || countries.includes(record.country)) &&
+      (dob === "" || record.birthday === dob)
     );
   });
 
@@ -149,7 +151,33 @@ function buildPaginationLinks(currentPage, totalPages) {
 
 // Function to handle page change
 function changePage(pageNumber) {
-  const results = getStoredUserRecords();
   const resultsPerPage = 10; // Change this to the desired number of results per page
-  displaySearchResults(results, pageNumber, resultsPerPage);
+  const currentPage = pageNumber;
+  const firstName = document.getElementById("firstName").value.toLowerCase();
+  const lastName = document.getElementById("lastName").value.toLowerCase();
+  const city = document.getElementById("cityName").value.toLowerCase();
+  const email = document.getElementById("email").value.toLowerCase();
+  const campus =
+    document.querySelector('input[name="campus"]:checked')?.value || "";
+  const course = document.getElementById("courseName").value;
+  const graduationYear = document.getElementById("graduationYear").value;
+  const countries = getSelectedCountries();
+  const dob = document.getElementById("dob").value;
+
+  const userRecords = getStoredUserRecords();
+  const filteredResults = userRecords.filter((record) => {
+    return (
+      record.firstName.toLowerCase().includes(firstName) &&
+      record.lastName.toLowerCase().includes(lastName) &&
+      record.city.toLowerCase().includes(city) &&
+      record.email.toLowerCase().includes(email) &&
+      (campus === "" || record.campus === campus) &&
+      (course === "" || record.course === course) &&
+      (graduationYear === "" || record.graduationYear === graduationYear) &&
+      (countries.length === 0 || countries.includes(record.country)) &&
+      (dob === "" || record.birthday === dob)
+    );
+  });
+
+  displaySearchResults(filteredResults, currentPage, resultsPerPage);
 }

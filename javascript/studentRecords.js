@@ -29,18 +29,7 @@ function generateRandomStudent() {
     "Rodriguez",
     "Martinez",
   ];
-  const cities = [
-    "New York",
-    "Los Angeles",
-    "Toronto",
-    "Mumbai",
-    "London",
-    "Chicago",
-    "Sydney",
-    "Berlin",
-    "Tokyo",
-    "Paris",
-  ];
+  const cities = ["New York", "Los Angeles", "Toronto", "Mumbai"];
   const courses = [
     "IT Solutions",
     "Web Development",

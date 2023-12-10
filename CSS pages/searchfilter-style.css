@@ -91,3 +91,6 @@ input[type="submit"]:hover {
   background-color: #f9f9f9;
   margin-top: 5px;
 }
+#results-container {
+  display: none;
+}
