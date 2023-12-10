@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (resetButton) {
     resetButton.addEventListener("click", resetFilters);
   }
-  // Rest of your existing code
-  // ...
 });
 
 function resetFilters() {
@@ -42,6 +40,10 @@ function resetFilters() {
   // Reset results container
   const resultsContainer = document.getElementById("results-container");
   resultsContainer.style.display = "none";
+
+  const noResultsMessageContainer =
+    document.getElementById("no-results-message");
+  noResultsMessageContainer.style.display = "none";
 }
 // Function to search and filter student records
 function searchAndFilter() {
@@ -101,18 +103,23 @@ function displaySearchResults(results, currentPage = 1, resultsPerPage = 10) {
   const resultsTable = document.getElementById("results-table");
   const resultsTableBody = document.getElementById("results-body");
   const paginationContainer = document.getElementById("pagination-container");
+  const noResultsMessageContainer =
+    document.getElementById("no-results-message");
 
   if (paginatedResults.length === 0) {
     // No matching records found
-    resultsContainer.style.display = "none"; // Hide the entire results container
+    resultsContainer.style.display = "block"; // Show the entire results container
+    resultsTable.style.display = "none"; // Hide the results table
     paginationContainer.innerHTML = "";
-    resultsTableBody.innerHTML =
-      '<tr><td colspan="8">No matching records found.</td></tr>';
+    // resultsTableBody.innerHTML =
+    //   '<tr><td colspan="8">No matching records found.</td></tr>';
+    noResultsMessageContainer.style.display = "block";
   } else {
     // Matching records found
     resultsContainer.style.display = "block"; // Show the entire results container
     resultsTable.style.display = "table"; // Show the results table
     resultsTableBody.innerHTML = ""; // Clear previous results
+    noResultsMessageContainer.style.display = "none";
     paginatedResults.forEach((result) => {
       const row = resultsTableBody.insertRow();
       row.innerHTML = `

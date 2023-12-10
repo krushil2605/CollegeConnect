@@ -142,8 +142,14 @@
             <input type="submit" name="Submit" id="submit" value="Search" />
           </div>
 
-          <button type="button" onclick="resetFilters()">Reset Filters</button>
+          <button type="button" onclick="resetFilters()" id="resetButton">
+            Reset Filters
+          </button>
         </form>
+        <div id="no-results-message" style="display: none">
+          <p>No matching records found.</p>
+        </div>
+
         <!-- Update your HTML structure for the results-container -->
         <div id="results-container">
           <table id="results-table">
