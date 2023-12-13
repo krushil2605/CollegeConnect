@@ -55,18 +55,29 @@
               discuss their work in academic conferences and symposia.
             </p>
             <div class="sysmbols">
-              <i
+              <button
                 id="thumsup1"
-                class="fa-regular fa-thumbs-up thumpsUpPosition"
+                class="like-btn"
                 onclick="toggleLikeDislike('thumsup1')"
-              ></i>
-              <i
+              >
+                <i id="likeIcon1" class="fa-regular fa-thumbs-up"></i>
+                <i id="likedIcon1" class="fa-solid fa-thumbs-up"></i>
+                <span id="likeCount1" class="like-count">
+                  <!-- You can set some random count here -->5</span
+                >
+              </button>
+              <button
                 id="thumbsdown1"
-                class="fa-regular fa-thumbs-down thumpsDownPosition"
+                class="dislike-btn"
                 style="display: none"
                 onclick="toggleLikeDislike('thumsup1')"
-              ></i>
-              <i class="fa-regular fa-bookmark fa-lg bookmarklocation"></i>
+              >
+                <i id="dislikeIcon1" class="fa-regular fa-thumbs-down"></i>
+                <i id="dislikedIcon1" class="fa-solid fa-thumbs-down"></i>
+                <span id="dislikeCount1" class="dislike-count">
+                  <!-- You can set some random count here -->2</span
+                >
+              </button>
             </div>
           </section>
           <section class="eventinfo">

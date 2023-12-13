@@ -44,16 +44,6 @@ body {
   flex-wrap: wrap;
 }
 
-.sysmbols {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 9px;
-}
-
-.fa-regular {
-  cursor: pointer;
-}
-
 #popupContainer {
   display: none;
   position: fixed;
@@ -105,4 +95,34 @@ body {
 
 #popupContainer {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.like-btn,
+.dislike-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.like-btn i,
+.dislike-btn i {
+  margin-right: 5px;
+}
+
+.like-count,
+.dislike-count {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.fa-solid {
+  display: none; /* Hide solid thumbs-up and thumbs-down icons by default */
+}
+
+/* Style for solid icons when active */
+.like-btn.active i.fa-solid,
+.dislike-btn.active i.fa-solid {
+  display: inline-block;
 }

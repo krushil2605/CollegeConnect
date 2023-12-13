@@ -21,36 +21,57 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-let notification, interval;
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "hidden") {
-    let leaveDate = new Date();
-    interval = setInterval(() => {
-      notification = new Notification("Come back please!!!", {
-        body: `You have been away since last ${Math.round(
-          (new Date() - leaveDate) / 1000
-        )} seconds.`,
-        tag: "Come back",
-      });
-    }, 5000);
-  } else {
-    if (interval) clearInterval(interval);
-    if (notification) notification.close();
-  }
-});
-
-function toggleLikeDislike(iconId) {
-  let likeIcon = document.getElementById(iconId);
-  let dislikeIcon = document.getElementById(
-    iconId.replace("thumsup", "thumbsdown")
+// let notification, interval;
+// document.addEventListener("visibilitychange", () => {
+//   if (document.visibilityState === "hidden") {
+//     let leaveDate = new Date();
+//     interval = setInterval(() => {
+//       notification = new Notification("Come back please!!!", {
+//         body: `You have been away since last ${Math.round(
+//           (new Date() - leaveDate) / 1000
+//         )} seconds.`,
+//         tag: "Come back",
+//       });
+//     }, 5000);
+//   } else {
+//     if (interval) clearInterval(interval);
+//     if (notification) notification.close();
+//   }
+// });
+function toggleLikeDislike(id) {
+  const likeButton = document.getElementById(id);
+  const dislikeButton = document.getElementById(`thumbs${id.substring(6)}`);
+  const likeIcon = document.getElementById(`likeIcon${id.substring(6)}`);
+  const likedIcon = document.getElementById(`likedIcon${id.substring(6)}`);
+  const dislikeIcon = document.getElementById(`dislikeIcon${id.substring(6)}`);
+  const dislikedIcon = document.getElementById(
+    `dislikedIcon${id.substring(6)}`
+  );
+  const likeCount = document.getElementById(`likeCount${id.substring(6)}`);
+  const dislikeCount = document.getElementById(
+    `dislikeCount${id.substring(6)}`
   );
 
-  if (likeIcon.style.display === "" || likeIcon.style.display === "block") {
-    likeIcon.style.display = "none";
-    dislikeIcon.style.display = "block";
+  if (likeButton.classList.contains("active")) {
+    // User is unliking, toggle it off
+    likeButton.classList.remove("active");
+    likeIcon.style.display = "inline-block";
+    likedIcon.style.display = "none";
+    likeCount.textContent = parseInt(likeCount.textContent) - 1;
   } else {
-    likeIcon.style.display = "block";
-    dislikeIcon.style.display = "none";
+    // User is liking, toggle it on
+    likeButton.classList.add("active");
+    likeIcon.style.display = "none";
+    likedIcon.style.display = "inline-block";
+    likeCount.textContent = parseInt(likeCount.textContent) + 1;
+
+    // If dislike was active, toggle it off
+    if (dislikeButton.classList.contains("active")) {
+      dislikeButton.classList.remove("active");
+      dislikeIcon.style.display = "inline-block";
+      dislikedIcon.style.display = "none";
+      dislikeCount.textContent = parseInt(dislikeCount.textContent) - 1;
+    }
   }
 }
 
