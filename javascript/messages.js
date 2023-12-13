@@ -5,11 +5,11 @@ const taskLists = JSON.parse(localStorage.getItem('taskLists')) || [];
 listTask();
 
 function listTask() {
-    let result = `<div class="my_reply">`;
+    let result = ``;
     for (let i = 0; i < taskLists.length; i++) {
         result += `<p>${taskLists[i]}</p>`;
     }
-    result += `</div>`;
+    result += ``;
     console.log(result);
     document.getElementById("message_here").innerHTML = result;
 }
