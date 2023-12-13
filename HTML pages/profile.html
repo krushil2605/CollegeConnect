@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
     <title>Profile</title>
-    <meta charset="uft-8" />
-    <script
-      src="https://kit.fontawesome.com/7ced19dc59.js"
-      crossorigin="anonymous"
-    ></script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link href="image/favicon.jpg" rel="icon" />
     <link rel="stylesheet" href="../CSS pages/profile_style.css" />
     <link rel="stylesheet" href="../CSS pages/main-page-style.css" />
@@ -14,60 +11,61 @@
 <body>
     <header>
         <section class="headerdesign">
-          <img src="../images/logo.jpg" id="headerlogo" href="./home.html" />
+          <img src="../images/logo.jpg" id="headerlogo" alt="College Connect Logo" />
           <h1>College Connect</h1>
         </section>
-      </header>
+    </header>
 
-      <nav id="com_nav">
+    <nav id="com_nav">
         <ul>
-          <li><a href="/HTML pages/home.html">Home</a></li>
-          <li><a href="/HTML pages/profile.html">Profiles</a></li>
-          <li><a href="/HTML pages/messages.html">Chat</a></li>
-          <li><a href="/HTML pages/events.html">Events</a></li>
-          <li><a href="/HTML pages/Blogs.html">Blogs and Articles</a></li>
-          <li><a href="/HTML pages/Resource.html">Resource</a></li>
-          <li><a href="/HTML pages/carrer-opp.html">Carrer</a></li>
-          <li><a href="/HTML pages/searchandfilter.html">Search and Filter</a></li>
-          <li><a href="/HTML pages/donation.html">Donation</a></li>
+            <!-- Updated navigation links -->
+            <li><a href="/HTML pages/home.html">Home</a></li>
+            <li><a href="/HTML pages/profile.html">Profile</a></li>
+            <li><a href="/HTML pages/messages.html">Chat</a></li>
+            <li><a href="/HTML pages/events.html">Events</a></li>
+            <li><a href="/HTML pages/Blogs.html">Blogs and Articles</a></li>
+            <li><a href="/HTML pages/Resource.html">Resource</a></li>
+            <li><a href="/HTML pages/career-opp.html">Career</a></li>
+            <li><a href="/HTML pages/searchandfilter.html">Search and Filter</a></li>
+            <li><a href="/HTML pages/donation.html">Donation</a></li>
         </ul>
-      </nav>
+    </nav>
 
-      <main>
+    <main>
         <div class="profile">
           <div class="box profile-photo">
               <img src="../images/man.png" alt="Profile Photo">
-              <h2 id="profileName">Name: Hemang Patel <button onclick="editProfile('profileName')">Edit</button></h2>
-              <p id="instituteName">Institute Name: Humber College Institute of Technology and Advanced Learning <button onclick="editProfile('instituteName')">Edit</button></p>
+              <h2 id="profileName">Name: Hemang Patel <span class="edit-icon" onclick="editProfile('profileName')">✎</span></h2>
+              <p id="instituteName">Institute Name: Humber College Institute of Technology and Advanced Learning <span class="edit-icon" onclick="editProfile('instituteName')">✎</span></p>
           </div>
           <div class="box contact-info">
               <h2>Contact Information</h2>
-              <p id="email">Email: example@example.com <button onclick="editProfile('email')">Edit</button></p>
-              <p id="phone">Phone: 123-456-7890 <button onclick="editProfile('phone')">Edit</button></p>
+              <p id="email">Email: example@example.com <span class="edit-icon" onclick="editProfile('email')">✎</span></p>
+              <p id="phone">Phone: 123-456-7890 <span class="edit-icon" onclick="editProfile('phone')">✎</span></p>
           </div>
           <div class="box expertise-info">
               <h2>Expertise</h2>
-              <p id="expertise1">Area of expertise 1 <button onclick="editProfile('expertise1')">Edit</button></p>
-              <p id="expertise2">Area of expertise 2 <button onclick="editProfile('expertise2')">Edit</button></p>
+              <p id="expertise1">Area of expertise 1 <span class="edit-icon" onclick="editProfile('expertise1')">✎</span></p>
+              <p id="expertise2">Area of expertise 2 <span class="edit-icon" onclick="editProfile('expertise2')">✎</span></p>
           </div>
           <div class="box basic-info">
               <h2>Basic Information</h2>
-              <p id="homeLocation">Home: City, Country <button onclick="editProfile('homeLocation')">Edit</button></p>
-              <p id="gender">Gender: Male/Female/Other <button onclick="editProfile('gender')">Edit</button></p>
+              <p id="homeLocation">Home: City, Country <span class="edit-icon" onclick="editProfile('homeLocation')">✎</span></p>
+              <p id="gender">Gender: Male/Female/Other <span class="edit-icon" onclick="editProfile('gender')">✎</span></p>
           </div>
           <div class="box about-myself">
               <h2>About Myself</h2>
-              <p id="aboutMe">Summary of yourself... <button onclick="editProfile('aboutMe')">Edit</button></p>
+              <p id="aboutMe">Summary of yourself... <span class="edit-icon" onclick="editProfile('aboutMe')">✎</span></p>
           </div>
           <div class="box education-info">
               <h2>Education</h2>
-              <p id="degree">Degree: Bachelor's/Master's/PhD <button onclick="editProfile('degree')">Edit</button></p>
-              <p id="fieldOfStudy">Field: Your field of study <button onclick="editProfile('fieldOfStudy')">Edit</button></p>
+              <p id="degree">Degree: Bachelor's/Master's/PhD <span class="edit-icon" onclick="editProfile('degree')">✎</span></p>
+              <p id="fieldOfStudy">Field: Your field of study <span class="edit-icon" onclick="editProfile('fieldOfStudy')">✎</span></p>
           </div>
           <div class="box work-experience">
               <h2>Work Experience</h2>
-              <p id="position">Position: Your position <button onclick="editProfile('position')">Edit</button></p>
-              <p id="company">Company: Previous/Current Company <button onclick="editProfile('company')">Edit</button></p>
+              <p id="position">Position: Your position <span class="edit-icon" onclick="editProfile('position')">✎</span></p>
+              <p id="company">Company: Previous/Current Company <span class="edit-icon" onclick="editProfile('company')">✎</span></p>
           </div>
           <div class="box achievements">
             <h2>Achievements</h2>
@@ -75,7 +73,7 @@
               <li>Accomplishment 1</li>
               <li>Accomplishment 2</li>
             </ul>
-            <button onclick="addToList('achievementsList', 'Add Accomplishment')">Add Accomplishment</button>
+            <button onclick="addToListWithForm('achievementsList', 'Add Accomplishment')">Add Accomplishment</button>
           </div>
   
           <div class="box projects">
@@ -84,7 +82,7 @@
               <li>Project 1</li>
               <li>Project 2</li>
             </ul>
-            <button onclick="addToList('projectsList', 'Add Project')">Add Project</button>
+            <button onclick="addToListWithForm('projectsList', 'Add Project')">Add Project</button>
           </div>
   
           <div class="box skills">
@@ -93,7 +91,7 @@
               <li>Skill 1</li>
               <li>Skill 2</li>
             </ul>
-            <button onclick="addToList('skillsList', 'Add Skill')">Add Skill</button>
+            <button onclick="addToListWithForm('skillsList', 'Add Skill')">Add Skill</button>
           </div>
           <div class="box testimonials">
             <h2>Testimonials</h2>
@@ -107,24 +105,18 @@
   
       </main>
 
-      <footer>
+    <footer>
+        <!-- Updated social icons and footer content -->
         <div class="socialIcons">
           <ul class="socialIcons">
-            <li>
-              <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
-            </li>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
           </ul>
           <p>&copy; College Connect</p>
         </div>
-      </footer>
+    </footer>
 
-      <script src="/javascript/profile.js"></script>
-
+    <script src="/javascript/profile.js"></script>
 </body>
 </html>

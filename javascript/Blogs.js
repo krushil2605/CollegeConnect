@@ -1,6 +1,6 @@
 var blogData = [
-    { title: "Exploring the Wonders of Nature", content: `In a fast-paced world filled with technology and urban landscapes, it's essential to reconnect with the beauty of nature. Join us on a virtual journey through lush forests, majestic mountains, and serene lakes. From the vibrant colors of a sunset to the soothing sounds of a flowing river, explore the wonders that nature has to offer. Learn about the importance of conservation and sustainable living as we strive to preserve these breathtaking landscapes for future generations.`, category: "Technology", image: "http://127.0.0.1:5501/images/blog.jpg" },
-    { title: "Unleashing Creativity: The Art of Mindful Expression", content: `Creativity is not just reserved for artists; it's a powerful tool for everyone. This blog post delves into the world of mindful expression and how engaging in creative activities can positively impact your mental well-being. Whether it's painting, writing, or even cooking, discover the joy of expressing yourself and tapping into your innate creativity. We'll share tips on incorporating creative practices into your daily life, fostering a more balanced and fulfilled existence.`, category: "Travel", image: "http://127.0.0.1:5501/images/blog.jpg" },
+    { title: "Exploring the Wonders of Nature", content: "Full content of blog 1", category: "Technology", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shaqi_jrvej.jpg/375px-Shaqi_jrvej.jpg" },
+    { title: "Roaming Around the World", content: "Full content of blog 2", category: "Travel", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shaqi_jrvej.jpg/375px-Shaqi_jrvej.jpg" },
     // Add more blog data as needed
 ];
 
@@ -26,6 +26,13 @@ function loadBlogPosts(data) {
         `;
 
         container.appendChild(blogPost);
+
+        // Hide the form initially
+        document.getElementById("blogForm").style.display = "none";
+        document.getElementById("blogFormModal").style.display = "none";
+
+        // Load blog posts
+        loadBlogPosts(blogData);
     });
 }
 
@@ -38,14 +45,15 @@ function showFullPost(title, content, image) {
     modalTitle.textContent = title;
     modalImage.src = image;
 
-    // Replace line breaks with spaces in the content
-    content = content.replace(/\n/g, ' ');
+    // Replace line breaks with <br> tags in the content
+    content = content.replace(/\n/g, '<br>');
 
-    // Use innerHTML instead of textContent to support HTML tags
+    // Use innerHTML to support line breaks
     modalContent.innerHTML = content;
 
     modal.style.display = "block";
 }
+
 
 function closeModal() {
     var modal = document.getElementById("myModal");
@@ -54,20 +62,23 @@ function closeModal() {
 
 function addNewBlogPost() {
     var title = document.getElementById("blogTitle").value;
-    var content = document.getElementById("blogContent").value;
+    var content = document.getElementById("blogContent").value.replace(/\n/g, '\\n').replace(/'/g, "\\'");
     var image = document.getElementById("blogImage").value;
+    var category = document.getElementById("blogCategory").value;
 
-    if (title && content && image) {
-        blogData.push({ title: title, content: content, category: "General", image: image });
+    if (title && content && image && category) {
+        blogData.push({ title: title, content: content, category: category, image: image });
         loadBlogPosts(blogData);
         document.getElementById("blogTitle").value = "";
         document.getElementById("blogContent").value = "";
         document.getElementById("blogImage").value = "";
+        document.getElementById("blogCategory").value = "";
         closeModal();
     } else {
-        alert("Please enter title, content, and image URL.");
+        alert("Please enter title, content, category, and image URL.");
     }
 }
+
 
 function filterByCategory() {
     var selectedCategory = document.getElementById("categoryFilter").value;
@@ -78,4 +89,39 @@ function filterByCategory() {
         var filteredData = blogData.filter(post => post.category === selectedCategory);
         loadBlogPosts(filteredData);
     }
+}
+
+function toggleBlogForm() {
+    var modal = document.getElementById("blogFormModal");
+
+    // Display the modal
+    modal.style.display = "block";
+}
+
+function closeBlogFormModal() {
+    var modal = document.getElementById("blogFormModal");
+
+    // Close the modal
+    modal.style.display = "none";
+}
+
+function loadBlogPosts(data) {
+    var container = document.getElementById("blogContainer");
+
+    container.innerHTML = "";
+
+    data.forEach(post => {
+        var blogPost = document.createElement("div");
+        blogPost.className = "blog-post";
+
+        blogPost.innerHTML = `
+            <img src="${post.image}" alt="Blog Image">
+            <h2>${post.title}</h2>
+            <p>${post.content.substring(0, 100)}...</p>
+            <p>Category: ${post.category}</p>
+            <a href="#" onclick="showFullPost('${post.title}', '${post.content}', '${post.image}')">Read More</a>
+        `;
+
+        container.appendChild(blogPost);
+    });
 }
