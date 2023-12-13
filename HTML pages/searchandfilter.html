@@ -47,7 +47,7 @@
           name="userInput"
           action="#"
           method="post"
-          onsubmit="return validateForm()"
+          onsubmit="return searchAndFilter()"
         >
           <div class="userFilters">
             <div class="filter">
@@ -71,39 +71,44 @@
             </div>
 
             <div class="filter">
-              Campus:
-              <label for="northCampus">North Campus</label>
-              <input
-                type="radio"
-                id="northCampus"
-                name="campus"
-                value="northCampus"
-              />
-              <label for="lakeshoreCampus">Lakeshore Campus</label>
-              <input
-                type="radio"
-                id="lakeshoreCampus"
-                name="campus"
-                value="lakeshoreCampus"
-              />
-              <label for="igs">IGS</label>
-              <input type="radio" id="igs" name="campus" value="IGS" />
+              <label>Campus:</label>
+              <div class="radio-group">
+                <label for="northCampus">North Campus</label>
+                <input
+                  type="radio"
+                  id="northCampus"
+                  name="campus"
+                  value="North Campus"
+                />
+                <label for="lakeshoreCampus">Lakeshore Campus</label>
+                <input
+                  type="radio"
+                  id="lakeshoreCampus"
+                  name="campus"
+                  value="Lakeshore Campus"
+                />
+                <label for="igs">IGS</label>
+                <input type="radio" id="igs" name="campus" value="IGS" />
+              </div>
             </div>
 
             <div class="filter">
               <label for="courseName">Course Name:</label>
               <select id="courseName" name="courseName">
-                <option value="" selected>Select</option>
-                <option value="itSolutions">IT Solutions</option>
-                <option value="webDevelopment">Web Development</option>
-                <option value="machineLearning">Machine Learning</option>
+                <option value="" selected>All</option>
+                <option value="IT Solutions">IT Solutions</option>
+                <option value="Web Development">Web Development</option>
+                <option value="AI">AI</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Big Data">Big Data</option>
               </select>
             </div>
 
             <div class="filter">
               <label for="graduationYear">Graduation Year:</label>
               <select id="graduationYear" name="graduationYear">
-                <option value="" selected>Select</option>
+                <option value="" selected>All</option>
+                <option value="2024">2024</option>
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
@@ -111,29 +116,67 @@
             </div>
 
             <div class="filter">
-              Select Country(ies):
-              <label for="Canada"> Canada</label>
-              <input type="checkbox" id="Canada" name="Canada" value="Canada" />
-              <label for="USA"> USA</label>
-              <input type="checkbox" id="USA" name="USA" value="USA" />
-              <label for="India"> India</label>
-              <input type="checkbox" id="India" name="India" value="India" />
-              <label for="UK"> UK</label>
-              <input type="checkbox" id="UK" name="UK" value="UK" />
-              <label for="other"> Other</label>
-              <input type="checkbox" id="other" name="other" value="other" />
+              <label>Countries:</label>
+              <div class="checkbox-group">
+                <label for="Canada"> Canada</label>
+                <input
+                  type="checkbox"
+                  id="Canada"
+                  name="countryCanada"
+                  value="Canada"
+                />
+                <label for="USA"> USA</label>
+                <input type="checkbox" id="USA" name="countryUSA" value="USA" />
+                <label for="India"> India</label>
+                <input
+                  type="checkbox"
+                  id="India"
+                  name="countryIndia"
+                  value="India"
+                />
+              </div>
+            </div>
+
+            <div class="filter">
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" name="dob" />
             </div>
           </div>
           <div class="submitContainer">
             <input type="submit" name="Submit" id="submit" value="Search" />
           </div>
+
+          <button type="button" onclick="resetFilters()" id="resetButton">
+            Reset Filters
+          </button>
         </form>
-        <div id="campus-error-message" class="error-message"></div>
-        <div id="email-error-message" class="error-message"></div>
-        <div id="cityName-error-message" class="error-message"></div>
-        <div id="results-container"></div>
+        <div id="no-results-message" style="display: none">
+          <p>No matching records found.</p>
+        </div>
+
+        <!-- Update your HTML structure for the results-container -->
+        <div id="results-container">
+          <table id="results-table">
+            <!-- Updated: Added an ID to the table -->
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Campus</th>
+                <th>Course</th>
+                <th>Graduation Year</th>
+                <th>Country</th>
+                <th>Birthday</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+          <div id="pagination-container"></div>
+        </div>
       </section>
     </main>
+
     <footer>
       <div class="footer-container">
         <div class="footer-section">
@@ -171,5 +214,6 @@
     </footer>
     <script src="/javascript/header.js"></script>
     <script src="/javascript/searchandfilter.js"></script>
+    <script src="/javascript/studentRecords.js"></script>
   </body>
 </html>
