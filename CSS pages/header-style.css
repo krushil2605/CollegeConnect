@@ -1,9 +1,15 @@
-* {
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+html {
   margin: 0;
   padding: 0;
 }
 
 body {
+  margin: 0%;
   font-family: "Arial", sans-serif;
   background-color: #f4f4f4;
 }
@@ -48,6 +54,7 @@ header {
 }
 
 #com_nav ul {
+  margin: 0px 0px;
   list-style: none;
   padding: 10px;
   display: flex;

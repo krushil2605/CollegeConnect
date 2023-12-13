@@ -5,7 +5,7 @@
   /* box-shadow: 0px 0px 7px rgb(70, 69, 69); */
   box-shadow: 5px 5px 5px 5px rgb(231, 218, 218);
 
-  border-radius: 15px;
+  border-radius: 15px 0px 0px 15px;
   background: linear-gradient(to left, white, rgba(113, 216, 216, 0.292));
 }
 
@@ -67,10 +67,20 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#total_chats {
+  overflow-y: auto; /* Added overflow-y to make it scrollable */
+  max-height: 310px;
+}
+
 #chat_style {
+  text-align: center;
   background-color: rgba(113, 216, 216, 0.477);
   border-radius: 15px 0px 0px 0px;
-  padding: 3px;
+}
+
+#chat_style p {
+  padding: 16px;
+  margin: 0px 0px;
 }
 
 #hearder_of_people {
@@ -78,7 +88,7 @@ body {
   display: grid;
   column-gap: 15px;
   grid-template-columns: 15px auto;
-  border-radius: 0px 15px 7px 0px;
+  border-radius: 0px 15px 0px 0px;
 }
 
 #hearder_of_people img {
@@ -100,6 +110,7 @@ body {
 #conversation {
   padding: 15px;
   display: flex;
+  height: 250px;
   flex-direction: column;
   overflow-y: auto; /* Added overflow-y to make it scrollable */
   max-height: 250px; /* Added max-height to limit the height and enable scrolling */
@@ -117,6 +128,7 @@ body {
 
 .my_message p {
   padding: 5px;
+  margin-top: 0%;
   background-color: rgba(139, 140, 139, 0.377);
   width: 200px;
   border: 1px solid rgb(180, 177, 177);
@@ -130,7 +142,7 @@ body {
 } */
 
 .my_reply div {
-  padding: 5px;
+  /* padding: 5px; */
   /* background-color: antiquewhite; */
   width: auto;
   /* border: 1px solid rgb(180, 177, 177);
@@ -139,6 +151,7 @@ body {
 
 .my_reply p {
   padding: 5px;
+  margin-top: 0%;
   background-color: rgba(220, 220, 137, 0.377);
   width: 200px;
   border: 1px solid rgb(180, 180, 177);
