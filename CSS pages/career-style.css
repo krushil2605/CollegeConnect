@@ -122,6 +122,13 @@ div.section3 button {
   letter-spacing: 1px;
 }
 
+.section3 section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  /* padding: 10px; */
+}
+
 div.section3 button:hover {
   background-color: #2980b9; /* Darker blue on hover */
   transform: scale(1.25);
