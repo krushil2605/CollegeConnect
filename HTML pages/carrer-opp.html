@@ -32,7 +32,7 @@
     <nav id="com_nav">
       <ul class="com_nav_menu">
         <li class="com_nav_menu_name">
-          <a href="index.html">Home</a>
+          <a href="/index.html">Home</a>
         </li>
         <li><a href="../HTML pages/profile.html">Profiles</a></li>
         <li><a href="../HTML pages/messages.html">Chat</a></li>
@@ -47,26 +47,30 @@
       </ul>
     </nav>
     <main>
-      <div id="search">
+      <div id="search" class="center">
         <h2>Search jobs</h2>
-        <form name="myform" action="" method="get">
-          <label for="keyword">Keyword</label><br />
+        <form name="myform" action="" method="get" class="center">
+          <label for="keyword">Keyword</label>
           <input type="text" name="keyword" id="keyword" />
-          <label for="location">Location</label><br />
+
+          <label for="location">Location</label>
           <input type="text" name="Radius" id="Radius" />
-          <label for="Radius">Radius</label><br />
+
+          <label for="Radius">Radius</label>
           <select name="redius">
             <option value="10KM" selected>10KM</option>
             <option value="30KM">30KM</option>
-            <option value="50KM">50KM</option></select
-          ><br />
-          <img
-            src="../images/search_icon.png"
-            alt="search"
-            height="30px"
-            width="30px"
-            onclick=""
-          />
+            <option value="50KM">50KM</option>
+          </select>
+
+          <a href="#" onclick="performSearch()">
+            <img
+              src="../images/search_icon.png"
+              alt="search"
+              height="30px"
+              width="30px"
+            />
+          </a>
         </form>
       </div>
       <div id="content">

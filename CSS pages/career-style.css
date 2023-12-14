@@ -1,4 +1,7 @@
 /* Career Opportunities: */
+body {
+  background-color: rgba(214, 227, 193, 0.235);
+}
 
 #search,
 #search form {
@@ -65,15 +68,16 @@
 }
 
 .section3 {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-around; */
+  margin-top: 25px;
+  margin-left: 10px;
   align-items: center;
   padding: 20px;
-  background-color: #f2f2f2; /* Light gray background */
+  background-color: white; /* Light gray background */
   color: #333; /* Dark text color */
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  box-shadow: 15px 15px 7px rgba(0, 0, 0, 0.153); /* Subtle box shadow */
+  max-height: 500px; /* Set your desired maximum height */
+  overflow-y: auto; /* Add scrollbar if content exceeds the height */
 }
 
 .section3 h2 {
@@ -171,6 +175,7 @@ div.section3 button:hover {
   width: 200px;
   height: 200px;
   perspective: 1000px;
+  background-color: white;
 }
 
 .flip-box-inner {
@@ -179,7 +184,7 @@ div.section3 button:hover {
 }
 
 .flip-box-front {
-  box-shadow: 2px 2px 7px rgb(117, 112, 112);
+  box-shadow: 15px 15px 7px rgba(0, 0, 0, 0.153); /* Subtle box shadow */
   border-radius: 12px 12px;
   position: absolute;
   backface-visibility: hidden;
@@ -204,6 +209,35 @@ div.section3 button:hover {
 
 #clearbutton {
   background-color: aliceblue;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#search form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#search form label {
+  padding: 10px;
+  font-size: larger;
+}
+
+#search form input,
+#search form select {
+  width: 150px; /* Adjust width as needed */
+  margin: 5px;
+}
+
+#search img {
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 @media screen and (max-width: 992px) {

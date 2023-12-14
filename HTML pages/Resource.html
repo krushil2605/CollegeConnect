@@ -20,10 +20,10 @@
   <body>
     <header>
       <section class="headerdesign">
-        <a href="index.html">
+        <a href="/index.html">
           <img src="../images/logo.jpg" id="headerlogo" class="logoImage" />
         </a>
-        <a href="index.html" class="logoText">
+        <a href="/index.html" class="logoText">
           <h1 class="logoText">College Connect</h1></a
         >
       </section>
@@ -32,7 +32,7 @@
     <nav id="com_nav">
       <ul class="com_nav_menu">
         <li class="com_nav_menu_name">
-          <a href="index.html">Home</a>
+          <a href="/index.html">Home</a>
         </li>
         <li><a href="../HTML pages/profile.html">Profiles</a></li>
         <li><a href="../HTML pages/messages.html">Chat</a></li>
@@ -224,18 +224,14 @@
                 placeholder="Write your LinkedIn post here..."
               />
             </form>
-            <form name="post" action="" method="get" class="post_button">
-              <input
-                type="button"
-                id="post_button"
-                value="Post"
-                onclick="addTask()"
-              />
-            </form>
+            <span id="error_message"></span>
+            <div class="post_button_container">
+              <button id="post_button" onclick="addTask()">Post</button>
+            </div>
             <ul id="post_section">
               <li>📰 Media</li>
               <li>🗓️ Event</li>
-              <li>📝write article</li>
+              <li>📝 Write article</li>
             </ul>
           </div>
         </div>
